@@ -35,7 +35,33 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'pry-rails'
+ gem 'pry-rails'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'faker'
+  gem 'bullet'
+
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
+  gem 'capistrano-ssh-doctor'
+  gem 'entypo-rails'
+  
+	gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+	gem 'sass-rails'
+	gem 'mini_magick'
+	gem 'carrierwave'
+
+	gem 'underscore-rails'
+
+	gem 'geocoder'
+	gem 'gmaps4rails'
+
+	gem 'kaminari'
+	gem 'kaminari-bootstrap'
+	gem 'friendly_id'
 end
 
 group :development do
