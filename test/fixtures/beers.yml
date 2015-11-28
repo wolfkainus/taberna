@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trademark: MyString
+  type: 
+  reviews: MyText
+  price: 1
+
+two:
+  trademark: MyString
+  type: 
+  reviews: MyText
+  price: 1
