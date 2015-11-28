@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128204425) do
+ActiveRecord::Schema.define(version: 20151128210852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,27 @@ ActiveRecord::Schema.define(version: 20151128204425) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "location_beers", force: :cascade do |t|
+    t.integer  "location_id"
+    t.integer  "beer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "location_beers", ["beer_id"], name: "index_location_beers_on_beer_id", using: :btree
+  add_index "location_beers", ["location_id"], name: "index_location_beers_on_location_id", using: :btree
+
   create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.text     "address"
     t.integer  "latitude"
     t.integer  "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,4 +74,6 @@ ActiveRecord::Schema.define(version: 20151128204425) do
   add_index "tabernarios", ["email"], name: "index_tabernarios_on_email", unique: true, using: :btree
   add_index "tabernarios", ["reset_password_token"], name: "index_tabernarios_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "location_beers", "beers"
+  add_foreign_key "location_beers", "locations"
 end
