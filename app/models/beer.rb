@@ -3,7 +3,7 @@ class Beer < ActiveRecord::Base
   has_many :location_beer
   has_many :location, through: :location_beer
 
-  validates :trademark, presence: true, uniqueness: true
+  validates :trademark, presence: true
   validates :type, presence: true
   validates :review, presence: true
   validates :price, presence: true
